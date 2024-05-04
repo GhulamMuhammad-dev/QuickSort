@@ -12,12 +12,12 @@ using namespace std;
          while(i<j){
          do{
             i++;
-         }while(array[i]>=paviot);
+         }while(array[i]<=paviot);
 
 
          do{
             j--;
-         }while(array[j]<=paviot);
+         }while(array[j]>=paviot);
          
          if(i<j){
             int temp=array[i];
@@ -41,12 +41,15 @@ int main(){
 
 const int size=7;
 int i=0;
-int j=size-1;
+int j=size;
 
 int randomArray[size]={5,3,6,2,8,1,7};
 
-cout<<partition(randomArray,i,j);
+partition(randomArray,i,j);
 
+for(int l=0;l<size;l++){
+    cout<<randomArray[l]<<",";
+}
 
 
 
