@@ -1,7 +1,11 @@
 #include<iostream>
 using namespace std;
 
-
+void swap(int &a,int &b){
+    int temp=a;
+    a=b;
+    b=temp;
+}
 
  int partition(int *array,int l,int h){
          int paviot=array[l];
@@ -20,21 +24,28 @@ using namespace std;
          }while(array[j]>=paviot);
          
          if(i<j){
-            int temp=array[i];
-            array[i]=array[j];
-            array[j]=temp;
+          swap(array[i],array[j]);
          }
          
          }
-    int temp=array[l];
-            array[l]=array[j];
-            array[j]=temp;
+        swap(array[l],array[j]);
 
 
             return j;
 
         
     }
+
+
+// void quickSort(int *randomArray,int l,int h){
+//     if(l<h){
+//         int j=partition(randomArray,l,h);
+//         quickSort(randomArray,l,j);
+//         quickSort(randomArray,j+1,h);
+//     }
+
+// }
+
 
 
 int main(){
@@ -44,17 +55,19 @@ int i=0;
 int j=size;
 
 int randomArray[size]={5,3,6,2,8,1,7};
+ 
+ partition(randomArray,i,j);
 
-partition(randomArray,i,j);
-
-for(int l=0;l<size;l++){
-    cout<<randomArray[l]<<",";
-}
-
-
+ for(int k=0;k<size;k++){
+    cout<<randomArray[k]<<",";
+ }
 
 
 
+
+
+
+ 
 
 
 
